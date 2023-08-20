@@ -1,25 +1,10 @@
 ---
-import HelloWorld from "@components/HelloWorld.astro";
-import HelloAstroVue from "@components/HelloAstroVue.vue";
+import BaseLayout from '@/layout/BaseLayout.astro';
+import NavigationBar from '@/components/NavigationBar.vue';
 
-const title: string = 'Index Page';
-const msg: string = 'Hello world !!!';
+const title: string = 'Main Page';
 ---
 
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/favicon.svg">
-  <title>{title}</title>
-</head>
-
-<body>
-  <HelloWorld msg="Hello Astro !" />
-  <HelloAstroVue msg="Hello Vue !" />
-</body>
-
-</html>
+<BaseLayout title={title}>
+  <NavigationBar client:load />
+</BaseLayout>
