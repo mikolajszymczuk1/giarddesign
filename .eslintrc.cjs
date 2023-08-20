@@ -8,5 +8,7 @@ module.exports = {
     'plugin:vue/vue3-recommended',
     '@vue/eslint-config-typescript',
   ],
-  rules: {}
+  rules: {
+    'vue/html-self-closing': 'off',
+  }
 }

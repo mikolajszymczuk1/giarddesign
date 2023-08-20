@@ -1,45 +1,48 @@
 <template>
-  <nav class="flex justify-between items-center px-[28px] py-[24px]">
-    <a href="/">
+  <nav class="flex justify-between items-center gap-x-[28px] relative px-[28px] py-[24px] bg-white">
+    <a
+      class="flex-1"
+      href="/"
+    >
       <LogoIcon />
     </a>
 
-    <div class="flex">
-      <div
-        class="flex items-center relative w-[112px] h-[23px] mr-[28px] px-[30px] border-solid border-[1px] border-black/10
-          rounded-[25px] overflow-hidden"
-      >
-        <SearchIcon class="absolute left-[10px]" />
+    <NavigationSearch />
 
-        <input
-          class="text-[0.4375rem] text-black outline-none font-inter"
-          type="text"
-          placeholder="Szukaj ..."
-        >
-      </div>
+    <button
+      class="flex justify-center items-center w-[22px] h-[19px]"
+      name="menu-icon"
+      @click="toggleMenu()"
+    >
+      <FontAwesomeIcon
+        class="w-[100%] h-auto"
+        :icon="navActive ? exitIcon : menuIcon"
+      />
+    </button>
 
-      <button
-        class="w-[22px]"
-        name="menu-icon"
-        @click="toggleMenu()"
-      >
-        <FontAwesomeIcon
-          class="w-[100%] h-auto"
-          :icon="menuIcon"
-        />
-      </button>
+    <!-- Menu with links -->
+    <div
+      class="flex flex-col absolute left-0 top-[100%] w-[100%] bg-white overflow-auto transition-all delay-150 duration-300"
+      :class="navActive ? 'h-[calc(100vh-71px)]' : 'h-0'"
+    >
+      <NavigationMenu />
     </div>
   </nav>
 </template>
 
 <script setup lang="ts">
-import { menuIcon } from '@/modules/fontawesome/iconsSet';
+import { ref, type Ref } from 'vue';
+import { menuIcon, exitIcon } from '@/modules/fontawesome/iconsSet';
 
 import LogoIcon from '@/components/icons/LogoIcon.vue';
-import SearchIcon from '@/components/icons/SearchIcon.vue';
+import NavigationMenu from '@/components/NavigationMenu.vue';
+import NavigationSearch from '@/components/NavigationSearch.vue';
+
+/** Navigation active status */
+const navActive: Ref<boolean> = ref(false);
 
 /** Function activate or deactivate menu */
 const toggleMenu = () => {
-  console.log('Toggle menu');
+  navActive.value = !navActive.value;
 };
 </script>
