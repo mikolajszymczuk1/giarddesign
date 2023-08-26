@@ -11,10 +11,7 @@
   </template>
 
   <template v-else>
-    <div
-      :class="classes"
-      :href="linkUrl"
-    >
+    <div :class="classes">
       <slot></slot>
 
       <slot name="subMenu"></slot>
@@ -31,5 +28,5 @@ defineProps({
 });
 
 /** Const classes for link styles */
-const classes: string = 'font-inter text-[0.75rem] text-black';
+const classes: string = 'font-inter text-[0.75rem] text-black lg:text-[0.875rem]';
 </script>
