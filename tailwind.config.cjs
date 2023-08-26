@@ -13,6 +13,9 @@ module.exports = {
       inter: ['Inter', 'sans-serif'],
       montserrat: ['Montserrat', 'sans-serif'],
     },
+    screens: {
+      md: '768px',
+    },
 	},
 	plugins: [],
 }

@@ -2,7 +2,7 @@
   <NavigationLink
     v-for="link in navigationLinks"
     :key="link.linkUrl"
-    class="py-[18px] px-[28px] border-black/20 border-solid border-t-[1px] group"
+    class="py-[18px] px-[28px] border-black/20 border-solid border-t-[1px] group md:border-none md:py-0"
     :link-url="link.linkUrl"
   >
     <div class="flex items-center justify-between">
@@ -14,7 +14,7 @@
     </div>
 
     <template #subMenu>
-      <div class="flex flex-col h-0 transition-all overflow-hidden group-hover:h-[100%]">
+      <div class="flex flex-col h-0 transition-all overflow-hidden group-hover:h-[100%] md:absolute md:top-[100%] md:group-hover:h-auto md:bg-white">
         <NavigationLink
           v-for="subLink in link.subLinks"
           :key="subLink.linkUrl"

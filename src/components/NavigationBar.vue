@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex justify-between items-center gap-x-[28px] relative px-[28px] py-[24px] bg-white">
+  <nav class="flex justify-between items-center gap-x-[28px] relative px-[28px] py-[24px] bg-white md:gap-x-0">
     <a
       class="flex-1"
       href="/"
@@ -7,10 +7,19 @@
       <LogoIcon />
     </a>
 
+    <!-- Menu with links -->
+    <div
+      class="flex flex-col absolute left-0 top-[100%] w-[100%] bg-white overflow-auto transition-all duration-300
+        md:flex-row md:static md:h-auto md:w-auto md:overflow-visible"
+      :class="navActive ? 'h-[calc(100vh-71px)]' : 'h-0'"
+    >
+      <NavigationMenu />
+    </div>
+
     <NavigationSearch />
 
     <button
-      class="flex justify-center items-center w-[22px] h-[19px]"
+      class="flex justify-center items-center w-[22px] h-[19px] md:hidden"
       name="menu-icon"
       @click="toggleMenu()"
     >
@@ -19,14 +28,6 @@
         :icon="navActive ? exitIcon : menuIcon"
       />
     </button>
-
-    <!-- Menu with links -->
-    <div
-      class="flex flex-col absolute left-0 top-[100%] w-[100%] bg-white overflow-auto transition-all delay-150 duration-300"
-      :class="navActive ? 'h-[calc(100vh-71px)]' : 'h-0'"
-    >
-      <NavigationMenu />
-    </div>
   </nav>
 </template>
 
