@@ -3,6 +3,7 @@
     <a
       :class="classes"
       :href="linkUrl"
+      data-test="navigation-link"
     >
       <slot></slot>
 
@@ -11,7 +12,10 @@
   </template>
 
   <template v-else>
-    <div :class="classes">
+    <div
+      :class="classes"
+      data-test="navigation-container"
+    >
       <slot></slot>
 
       <slot name="subMenu"></slot>
@@ -23,7 +27,7 @@
 defineProps({
   linkUrl: {
     type: String,
-    required: true,
+    default: '',
   },
 });
 
