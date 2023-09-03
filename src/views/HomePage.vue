@@ -17,11 +17,15 @@
       </h2>
 
       <div class="flex flex-col gap-y-[16px] items-start xlg:flex-row xlg:gap-x-[30px]">
-        <RoundedButton>Skontaktuj się z nami</RoundedButton>
+        <RoundedButton btn-color="light">
+          Skontaktuj się z nami
+        </RoundedButton>
+
         <RoundedButton
           with-icon
           transparent
-          icon-color="green"
+          btn-color="green"
+          bordered
         >
           Zobacz nasze realizacje
         </RoundedButton>
@@ -36,6 +40,57 @@
 
   <!-- ====== MAIN ====== -->
   <main>
+    <section class="pt-[60px] pb-[156px] xlg:pt-[120px] xlg:pb-[160px]">
+      <div class="px-[21px] mb-[49px] md:pl-[20%] md:pr-[35%] xlg:pl-[14%] xlg:pr-[37%] xlg:mb-[96px] ulg:pl-[22%] ulg:pr-[]">
+        <HeadingTextBlock>
+          <template #section-name>
+            Oferta
+          </template>
+          <template #section-title-first-part>
+            Działamy
+          </template>
+          <template #section-title-second-part>
+            kompleksowo
+          </template>
+          <template #section-content>
+            Oferujemy kompletną obsługę inwestycji terenów zielonych.
+            Projektujemy nowoczesne ogrody przydomowe oraz rezydencjonalne.
+            Stworzymy dla Ciebie projekt, zwizualizujemy go i wcielimy w życie,
+            a na każdym etapie posłużymy radą i wieloletnim doświadczeniem.
+          </template>
+        </HeadingTextBlock>
+      </div>
+
+      <!-- Cards -->
+      <div class="flex justify-center flex-wrap gap-y-[32px] gap-x-[64px] px-[27px]">
+        <OfferCard icon="pencil">
+          <template #card-title>
+            Projekty
+          </template>
+          <template #card-content>
+            Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym wykorzystaniem istniejącej przestrzeni.
+          </template>
+        </OfferCard>
+
+        <OfferCard icon="eye">
+          <template #card-title>
+            Wizualizacje
+          </template>
+          <template #card-content>
+            Przedstawimy Ci projekty koncepcyjne w postaci wirtualnego spaceru animowanego w technologii 3D.
+          </template>
+        </OfferCard>
+
+        <OfferCard icon="stars">
+          <template #card-title>
+            Realizacje
+          </template>
+          <template #card-content>
+            Zrealizujemy Twoje marzenie przy użyciu najnowszych rozwiązań i zaawansowanych technologii.
+          </template>
+        </OfferCard>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -43,4 +98,6 @@
 import NavigationBar from '@/components/navigation/NavigationBar.vue';
 import RoundedButton from '@/components/buttons/RoundedButton.vue';
 import HeroSlider from '@/widgets/HeroSlider.vue';
+import HeadingTextBlock from '@/components/HeadingTextBlock.vue';
+import OfferCard from '@/components/cards/OfferCard.vue';
 </script>

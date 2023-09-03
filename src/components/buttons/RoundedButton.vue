@@ -1,8 +1,11 @@
 <template>
   <button
-    class="flex items-center gap-x-[7px] py-[12px] px-[20.5px] rounded-[25px] font-inter text-[0.875rem] lg:px-[24px] lg:text-[1rem]"
+    class="flex items-center gap-x-[7px] rounded-[25px] font-inter text-[0.875rem] lg:text-[1rem]"
     :class="[
-      transparent ? 'bg-none border-solid border-[1px] border-green text-green' : 'bg-green text-lightCream',
+      transparent ? 'bg-none' : bgLight ? 'bg-lightCream' : 'bg-green',
+      bordered ? 'border-solid border-[1px]' : underline ? 'pb-[4px] border-b-solid border-b-[1px] rounded-none' : '',
+      noPadding ? '' : 'py-[12px] px-[20.5px] lg:px-[24px]',
+      getBorderTextColor,
     ]"
     @click="emitClick()"
   >
@@ -11,28 +14,30 @@
     <DirectionArrowIcon
       v-if="withIcon"
       class="lg:w-[16px] lg:h-[16px]"
-      :color="iconColor"
+      :class="arrowRight ? 'rotate-[-90deg]' : ''"
+      :color="btnColor"
     />
   </button>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
+
 import DirectionArrowIcon from '@/components/icons/DirectionArrowIcon.vue';
 
 const emit = defineEmits<{
   (e: 'onClick'): void,
 }>();
 
-defineProps({
-  transparent: {
-    type: Boolean,
-    default: false,
-  },
-  withIcon: {
-    type: Boolean,
-    default: false,
-  },
-  iconColor: {
+const props = defineProps({
+  transparent: { type: Boolean, default: false },
+  withIcon: { type: Boolean, default: false },
+  bordered: { type: Boolean, default: false },
+  noPadding: { type: Boolean, default: false },
+  arrowRight: { type: Boolean, default: false },
+  bgLight: { type: Boolean, default: false },
+  underline: { type: Boolean, default: false },
+  btnColor: {
     type: String,
     default: 'green',
     validator(value: string) {
@@ -43,4 +48,14 @@ defineProps({
 
 /** Emit click event */
 const emitClick = () => emit('onClick');
+
+/** Return button text color based on `btnColor` prop value */
+const getBorderTextColor = computed<string>(() => {
+  switch(props.btnColor) {
+    case 'green': return 'border-green text-green';
+    case 'black': return 'border-black text-black';
+    case 'light': return 'border-lightCream text-lightCream';
+    default: return 'text-green';
+  }
+});
 </script>
