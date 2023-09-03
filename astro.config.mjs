@@ -8,6 +8,12 @@ export default defineConfig({
   integrations: [
     vue({
       appEntrypoint: '/src/pages/_app.ts',
+      template: {
+        compilerOptions: {
+          // treat all tags with a dash as custom elements
+          isCustomElement: (tag) => tag.includes('-'),
+        },
+      },
     }),
     tailwind(),
   ],

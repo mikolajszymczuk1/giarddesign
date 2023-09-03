@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '@/layout/BaseLayout.astro';
-import NavigationBar from '@/components/navigation/NavigationBar.vue';
+import HomePage from '@/views/HomePage.vue';
 
 const title: string = 'Main Page';
 ---
 
 <BaseLayout title={title}>
-  <NavigationBar client:load />
+  <HomePage client:only="vue" />
 </BaseLayout>

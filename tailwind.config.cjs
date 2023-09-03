@@ -16,6 +16,12 @@ module.exports = {
     screens: {
       md: '768px',
       lg: '1024px',
+      xlg: '1440px',
+      ulg: '1800px',
+    },
+    backgroundImage: {
+      heroImageAMobile: "url('/src/assets/images/heroImageA-mobile.png')",
+      heroImageADesktop: "url('/src/assets/images/heroImageA-desktop.png')",
     },
 	},
 	plugins: [],
