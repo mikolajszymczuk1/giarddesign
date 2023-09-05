@@ -7,7 +7,10 @@
       <slot name="section-name"></slot>
     </p>
 
-    <h2 class="font-montserrat text-[1.5rem] xlg:text-[3rem]">
+    <h2
+      class="font-montserrat text-[1.5rem] leading-[115%] xlg:text-[3rem]"
+      :class="light ? 'text-lightCream' : 'text-black'"
+    >
       <slot name="section-title-first-part"></slot>
 
       <span class="font-inter font-medium italic">
@@ -18,6 +21,7 @@
     <p
       v-if="!noContent"
       class="mt-[16px] font-inter text-[0.75rem] xlg:text-[1rem] xlg:mt-[32px]"
+      :class="light ? 'text-lightCream' : 'text-black'"
     >
       <slot name="section-content"></slot>
     </p>

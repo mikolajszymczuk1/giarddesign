@@ -91,6 +91,44 @@
         </OfferCard>
       </div>
     </section>
+
+    <section class="md:flex md:flex-row-reverse">
+      <div
+        class="flex flex-col items-start gap-y-[36px] px-[21px] py-[70px] bg-green md:w-[54.5%] lg:pl-[160px]
+          lg:pr-[92px] lg:py-[135px] xlg:gap-y-[72px] ulg:pr-[10%] ulg:pl-[10%]"
+      >
+        <HeadingTextBlock light>
+          <template #section-name>
+            O firmie
+          </template>
+          <template #section-title-first-part>
+            Tworzymy<br> z
+          </template>
+          <template #section-title-second-part>
+            pasją
+          </template>
+          <template #section-content>
+            Każdy projekt to nowe wyzwanie. Dlatego nasz zespół tworzą wykwalifikowani projektanci oraz architekci,
+            których zadaniem jest rozpoznanie i realizacja potrzeb każdego Klienta.
+            Nasza specjalizacja to przestrzenie nowoczesne, które charakteryzuje minimalizm, geometria i elegancka prostota.
+            Tworzymy ogrody małoobsługowe, dostosowane do współczesnego trybu życia.
+          </template>
+        </HeadingTextBlock>
+
+        <RoundedButton
+          with-icon
+          transparent
+          btn-color="light"
+          bordered
+          arrow-right
+        >
+          Poznaj nas bliżej
+        </RoundedButton>
+      </div>
+
+      <div class="h-[375px] bg-aboutImageMobile bg-no-repeat bg-center bg-cover lg:bg-aboutImageDesktop md:w-[47.5%] md:h-auto">
+      </div>
+    </section>
   </main>
 </template>
 

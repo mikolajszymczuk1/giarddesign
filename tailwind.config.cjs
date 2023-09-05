@@ -22,6 +22,8 @@ module.exports = {
     backgroundImage: {
       heroImageAMobile: "url('/src/assets/images/heroImageA-mobile.png')",
       heroImageADesktop: "url('/src/assets/images/heroImageA-desktop.png')",
+      aboutImageMobile: "url('/src/assets/images/aboutImage-mobile.png')",
+      aboutImageDesktop: "url('/src/assets/images/aboutImage-desktop.png')",
     },
 	},
 	plugins: [],
