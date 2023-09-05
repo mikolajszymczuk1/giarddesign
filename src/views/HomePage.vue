@@ -130,6 +130,8 @@
       </div>
     </section>
   </main>
+
+  <ContactFooter />
 </template>
 
 <script setup lang="ts">
@@ -138,4 +140,5 @@ import RoundedButton from '@/components/buttons/RoundedButton.vue';
 import HeroSlider from '@/widgets/HeroSlider.vue';
 import HeadingTextBlock from '@/components/HeadingTextBlock.vue';
 import OfferCard from '@/components/cards/OfferCard.vue';
+import ContactFooter from '@/components/ContactFooter.vue';
 </script>

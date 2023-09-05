@@ -24,7 +24,11 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
+const props = defineProps({
+  light: {
+    type: Boolean,
+    default: false,
+  },
   linkUrl: {
     type: String,
     default: '',
@@ -32,5 +36,5 @@ defineProps({
 });
 
 /** Const classes for link styles */
-const classes: string = 'font-inter text-[0.75rem] text-black lg:text-[0.875rem]';
+const classes: string = `font-inter text-[0.75rem] ${ props.light ? 'text-lightCream' : 'text-black' } lg:text-[0.875rem]`;
 </script>

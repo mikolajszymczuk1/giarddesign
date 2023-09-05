@@ -64,5 +64,5 @@ const navigationLinks: Link[] = [
  * @param {Link} link link to check
  * @return {boolean} true if link has sublinks
  */
-const hasSublinks = (link: Link): boolean => link.subLinks.length === 0;
+const hasSublinks = (link: Link): boolean => link.subLinks?.length === 0;
 </script>
