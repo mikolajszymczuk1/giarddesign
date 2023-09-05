@@ -20,8 +20,8 @@
       </div>
     </section>
 
-    <section class="flex flex-col gap-y-[50px] mb-[60px] md:flex-row md:justify-between">
-      <div class="flex flex-col gap-y-[24px] md:flex-row md:gap-x-[48px] xlg:mb-[120px]">
+    <section class="flex flex-col gap-y-[50px] mb-[60px] md:flex-row md:justify-between xlg:mb-[120px]">
+      <div class="flex flex-col gap-y-[24px] md:flex-row md:gap-x-[48px]">
         <NavigationLink
           v-for="link in links"
           :key="link.linkUrl"
