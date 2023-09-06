@@ -1,14 +1,11 @@
 <template>
   <nav
-    class="flex justify-between items-center gap-x-[28px] relative px-[28px] py-[24px] bg-white md:gap-x-0 lg:px-[89px]
-      lg:py-[15px] ulg:px-[10%]"
+    class="flex justify-between sticky top-0 items-center gap-x-[28px] px-[28px] py-[24px] bg-white md:gap-x-0 md:relative lg:px-[89px]
+      lg:py-[15px] ulg:px-[10%] z-10"
   >
     <a
       class="flex-1 md:flex-none"
       href="/"
-      data-aos="fade-down"
-      data-aos-duration="800"
-      data-aos-delay="300"
     >
       <LogoIcon class="lg:w-[114px] lg:h-auto" />
     </a>
