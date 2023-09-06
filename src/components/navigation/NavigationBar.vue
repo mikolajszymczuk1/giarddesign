@@ -6,6 +6,9 @@
     <a
       class="flex-1 md:flex-none"
       href="/"
+      data-aos="fade-down"
+      data-aos-duration="800"
+      data-aos-delay="300"
     >
       <LogoIcon class="lg:w-[114px] lg:h-auto" />
     </a>
