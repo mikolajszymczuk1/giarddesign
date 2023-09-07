@@ -3,13 +3,20 @@
     <component
       :is="getIcon"
       class="mb-[29px] xlg:w-[40px] xlg:mb-[34px]"
+      data-test="icon-component"
     ></component>
 
-    <h3 class="mb-[11px] font-montserrat text-[1.5rem] text-black xlg:text-[1.75rem] xlg:mb-[12px]">
+    <h3
+      class="mb-[11px] font-montserrat text-[1.5rem] text-black xlg:text-[1.75rem] xlg:mb-[12px]"
+      data-test="card-title"
+    >
       <slot name="card-title"></slot>
     </h3>
 
-    <p class="mb-[54px] font-inter text-[0.75rem] xlg:mb-[63px] xlg:text-[0.875rem]">
+    <p
+      class="mb-[54px] font-inter text-[0.75rem] xlg:mb-[63px] xlg:text-[0.875rem]"
+      data-test="card-content"
+    >
       <slot name="card-content"></slot>
     </p>
 

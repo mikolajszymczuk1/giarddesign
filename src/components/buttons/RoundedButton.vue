@@ -16,6 +16,7 @@
       class="lg:w-[16px] lg:h-[16px]"
       :class="arrowRight ? 'rotate-[-90deg]' : ''"
       :color="btnColor"
+      data-test="arrow-icon"
     />
   </button>
 </template>
